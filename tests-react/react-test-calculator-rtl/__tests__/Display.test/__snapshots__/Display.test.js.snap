@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Display should render correctly 1`] = `
+<div>
+  <div
+    class="display-container"
+    testid="display-container"
+  >
+    <p
+      class="display-value"
+      testid="display-value"
+    />
+  </div>
+</div>
+`;
