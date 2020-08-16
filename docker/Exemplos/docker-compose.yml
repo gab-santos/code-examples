@@ -1,0 +1,22 @@
+version: "3.3"
+
+services:
+  mongodb:
+    image: mongo:4.0
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./src/database/db:/src/database/db
+
+  backend:
+    image: backend:1.0
+    build: .
+    container_name: backend
+    command: npm start
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/app
+    depends_on:
+      - mongodb

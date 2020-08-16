@@ -1,0 +1,62 @@
+COntruindo uma imagem própria:
+    $   docker build -t minha-image:1.0 .
+  Obs: -t : utilizado para adicionar tag/nome para a imagem.
+       O pronto final indica o repositório onde está o Dockerfile.
+
+Sudindo um container já startado:
+    $ docker run -ti -p port_expose --name container_name image_name command(npm start)
+
+Subindo um container a partir de uma imagem própria:
+    $   docker run -tid --name meu-container minha-imagem:1.0
+  Obs:  -d : Executar em segundo plano.
+       Container não poderão ser executados se tiverem o mesmo nome.
+  
+Acessando um container:
+    $   docker exec -ti nome-do-container bash
+
+Limpando a bagunça:
+  Apagando container que ja morreram:
+    $   docker rm -v $(docker ps -a -q -f status=exited)
+
+  Apagando imagens soltas:
+    $   docker rmi $(docker images -f dangling=true -q)
+
+  Limpando volumes esquecidos:
+    $   docker run -v /var/run/docker.sock:/var/run/docker.sock -v 
+        /var/lib/docker:/var/lib/docker -rm martin/docker-cleanup-volumes
+
+DOCKER-COMPOSE
+
+Executar:
+  $ docker-compose up -d
+  Obs:  -d : Executar em segundo plano.
+
+Recria as imagens e os contariners:
+    $   docker-compose up -d --force-recreate --build
+
+* Dokcer compose file reference
+
+MONGODB CONTAINER
+
+Acessar terminal do container:
+    $   docker exec -ti mongodb bash
+Acessar terminal do MongoDB
+    $   mongo
+Mostrar Databases
+    $   show dbs
+Criar Database
+    $   use nome-databse
+Criar Collection e salvar Document
+    $   b.collection-name.save({ collection-atribute: "value-atribute"})
+Monstar valores da Collection
+    $   db.collection-name.find({})
+Sair do terminar do MongoDB
+    $   exit
+Sair do terminal do container
+    $   exit
+              
+  
+Acessar redis dentro do container
+    $ docker exec -it redisdb redis-cli
+
+
