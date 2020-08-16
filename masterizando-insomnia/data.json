@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Gabriel Santos",
+      "email": "gabriel@email.com"
+    }
+  ],
+  "products": [
+    {
+      "title": "Produto 1",
+      "price": 180,
+      "id": 1
+    },
+    {
+      "title": "Produto 1",
+      "price": 180,
+      "id": 2
+    },
+    {
+      "title": "Produto 1",
+      "price": "120",
+      "id": 3
+    }
+  ],
+  "orders": [
+    {
+      "date": "2020-03-04T18:16:33.993Z",
+      "id": 1
+    },
+    {
+      "date": "2020-03-04T18:17:13.617Z",
+      "uuid": "4abab34e-b66e-438f-a1d5-3d33ea42acf7",
+      "id": 2
+    }
+  ]
+}
