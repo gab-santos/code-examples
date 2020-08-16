@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Todos Component should render correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(Todos)>
+    <Todos
+      dispatch={[Function]}
+      todos={
+        Array [
+          Object {
+            "id": 0,
+            "text": "Fazer café",
+          },
+          Object {
+            "id": 1,
+            "text": "Acessar o slack",
+          },
+          Object {
+            "id": 2,
+            "text": "Ver RocketLive",
+          },
+        ]
+      }
+    >
+      <div
+        className="Todos"
+      >
+        <li
+          key="0"
+        >
+          Fazer café
+        </li>
+        <li
+          key="1"
+        >
+          Acessar o slack
+        </li>
+        <li
+          key="2"
+        >
+          Ver RocketLive
+        </li>
+      </div>
+    </Todos>
+  </Connect(Todos)>
+</Provider>
+`;
