@@ -1,0 +1,40 @@
+Passo a passo para criação de projetos em TypeScrip no NodeJS
+
+* Sucrase - Gera do bundle do projeto convertendo todo o código para JS, como não faz a checagem de tipos sua performance é maior.
+  $ yarn add -D typescript sucrase nodemon
+
+- Cria-se o arquivo 'nodemon.json' que irá conter as configurações no nodemon.
+  {
+    "watch": ["src"], // especifica-se quais pastas o nodemon vai ficar observando.
+    "ext": "ts", // especifica-se as extenções dos arquivos que serão observados.
+    "execMap": {
+      "ts": "node --inspect -r sucrase/register" // expecifica-se qual script será      executado quando um arquivo com determinada extenção for atualizado.
+    }
+  }
+
+- Configuração do eslint que será quem vai lidar com as validações da tipagm.
+  $ yarn add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+
+- Init eslint
+  $ yarn eslint --init
+
+- As resposta devem ser a seguinte orgem: 
+  - To check syntax, find problems, and enforce code style
+  - JavaScript modules (import/export)
+  - None of these
+  - y
+  - Node
+  - Use a popular style guide
+  - Standard: https://github.com/standard/standard 
+  - JavaScript
+  - Y
+
+- Apagar package-lock.json e executar $ yarn
+
+- Configurações do prettier
+  $ yarn add -D prettier eslint-config-prettier eslint-plugin-prettier
+
+- Editar o arquivo .eslintrc.js com os dados do Gist: https://gist.github.com/gab-santos/3bebd5fe6101b3aa24d56f5ee11a70f2
+
+
+
